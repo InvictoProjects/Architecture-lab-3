@@ -24,6 +24,7 @@ CREATE TABLE connections
 INSERT INTO balancers VALUES (DEFAULT);
 INSERT INTO balancers VALUES (DEFAULT);
 INSERT INTO balancers VALUES (DEFAULT);
+INSERT INTO balancers VALUES (DEFAULT);
 
 INSERT INTO machines (is_working) VALUES (TRUE);
 INSERT INTO machines (is_working) VALUES (TRUE);
@@ -32,6 +33,9 @@ INSERT INTO machines (is_working) VALUES (FALSE);
 INSERT INTO machines (is_working) VALUES (TRUE);
 INSERT INTO machines (is_working) VALUES (FALSE);
 INSERT INTO machines (is_working) VALUES (TRUE);
+INSERT INTO machines (is_working) VALUES (FALSE);
+INSERT INTO machines (is_working) VALUES (TRUE);
+INSERT INTO machines (is_working) VALUES (FALSE);
 
 INSERT INTO connections (machine_id, balancer_id) VALUES (1, 1);
 INSERT INTO connections (machine_id, balancer_id) VALUES (2, 1);
@@ -40,3 +44,7 @@ INSERT INTO connections (machine_id, balancer_id) VALUES (4, 2);
 INSERT INTO connections (machine_id, balancer_id) VALUES (5, 2);
 INSERT INTO connections (machine_id, balancer_id) VALUES (6, 3);
 INSERT INTO connections (machine_id, balancer_id) VALUES (7, 3);
+INSERT INTO connections (machine_id, balancer_id) VALUES (8, 4);
+INSERT INTO connections (machine_id, balancer_id) VALUES (9, 4);
+INSERT INTO connections (machine_id, balancer_id) VALUES (10, 4);
+
