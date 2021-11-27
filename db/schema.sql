@@ -23,9 +23,12 @@ CREATE TABLE connections
 -- Insert demo data.
 INSERT INTO balancers VALUES (DEFAULT);
 INSERT INTO balancers VALUES (DEFAULT);
+INSERT INTO balancers VALUES (DEFAULT);
 
 INSERT INTO machines (is_working) VALUES (TRUE);
 INSERT INTO machines (is_working) VALUES (TRUE);
+INSERT INTO machines (is_working) VALUES (TRUE);
+INSERT INTO machines (is_working) VALUES (FALSE);
 INSERT INTO machines (is_working) VALUES (TRUE);
 INSERT INTO machines (is_working) VALUES (FALSE);
 INSERT INTO machines (is_working) VALUES (TRUE);
@@ -35,3 +38,5 @@ INSERT INTO connections (machine_id, balancer_id) VALUES (2, 1);
 INSERT INTO connections (machine_id, balancer_id) VALUES (3, 2);
 INSERT INTO connections (machine_id, balancer_id) VALUES (4, 2);
 INSERT INTO connections (machine_id, balancer_id) VALUES (5, 2);
+INSERT INTO connections (machine_id, balancer_id) VALUES (6, 3);
+INSERT INTO connections (machine_id, balancer_id) VALUES (7, 3);
