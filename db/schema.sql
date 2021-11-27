@@ -19,3 +19,12 @@ CREATE TABLE connections
     balancer_id SERIAL REFERENCES balancers (id) ON DELETE CASCADE,
     PRIMARY KEY (machine_id, balancer_id)
 );
+
+-- Insert demo data.
+INSERT INTO balancers VALUES (DEFAULT);
+
+INSERT INTO machines (is_working) VALUES (TRUE);
+INSERT INTO machines (is_working) VALUES (TRUE);
+
+INSERT INTO connections (machine_id, balancer_id) VALUES (1, 1);
+INSERT INTO connections (machine_id, balancer_id) VALUES (2, 1);
