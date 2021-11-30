@@ -41,16 +41,14 @@ const Client = baseUrl => {
             const putData = JSON.stringify(data);
 
             const options = {
-                hostname: baseUrl,
                 method: 'PUT',
-                path: path,
                 headers: {
                     'Content-Type': 'application/json',
                     'Content-Length': Buffer.byteLength(putData)
                 }
             };
 
-            http.request(options, res => {
+            const req = http.request(baseUrl + path, options, res => {
                 res.setEncoding('utf8');
                 let rawData = '';
                 res.on('data', chunk => {
@@ -64,9 +62,14 @@ const Client = baseUrl => {
                         reject(e);
                     }
                 });
-            }).on('error', e => {
+            })
+
+            req.on('error', e => {
                 reject(e);
             });
+
+            req.write(putData);
+            req.end();
         })
     }
 };
