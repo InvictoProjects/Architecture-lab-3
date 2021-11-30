@@ -3,11 +3,12 @@ package main
 import (
 	"database/sql"
 	"flag"
-	"github.com/invictoprojects/architecture-lab-3/server/db"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
+
+	"github.com/invictoprojects/architecture-lab-3/server/db"
 )
 
 var httpPortNumber = flag.Int("p", 8080, "HTTP port number")
@@ -28,7 +29,7 @@ func main() {
 
 	if server, err := ComposeApiServer(HttpPortNumber(*httpPortNumber)); err == nil {
 		go func() {
-			log.Println("Starting chat server...")
+			log.Println("Starting balancers server...")
 
 			err := server.Start()
 			if err == http.ErrServerClosed {
@@ -46,6 +47,6 @@ func main() {
 			log.Printf("Error stopping the server: %s", err)
 		}
 	} else {
-		log.Fatalf("Cannot initialize chat server: %s", err)
+		log.Fatalf("Cannot initialize balancers server: %s", err)
 	}
 }
