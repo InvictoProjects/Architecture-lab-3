@@ -9,7 +9,7 @@ balancersClient.listBalancers()
     .then((list) => {
         console.log('=== Scenario 1 ===');
         console.log('List of balancers:');
-        list.forEach((c) => console.log(`Id: ${c.Id}, Used Machines: [${c.UsedMachines}], Total Machines Count: ${c.TotalMachinesCount}`));
+        list.forEach((c) => console.log(`Id: ${c.id}, Used Machines: [${c.usedMachines}], Total Machines Count: ${c.totalMachinesCount}`));
     })
     .catch((e) => {
         console.log(`Problem listing list of balancers: ${e.message}`);
