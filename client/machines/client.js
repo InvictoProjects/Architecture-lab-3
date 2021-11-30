@@ -1,11 +1,13 @@
 const http = require('../common/http');
 
 const Client = (baseUrl) => {
+
     const client = http.Client(baseUrl);
 
     return {
-        listBalancers: () => client.get('/balancers')
+        updateMachine: (id, isWorking) => client.put('/machines', { id, isWorking })
     }
+
 };
 
 module.exports = { Client };
