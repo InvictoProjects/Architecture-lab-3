@@ -6,7 +6,7 @@ import (
 
 type Balancer struct {
 	Id                 int64   `json:"id"`
-	UsedMachines       []int64 `json:"used_machines"`
+	UsedMachines       []int64 `json:"usedMachines"`
 	TotalMachinesCount int64   `json:"totalMachinesCount"`
 }
 
