@@ -19,7 +19,8 @@ func NewStore(db *sql.DB) *Store {
 }
 
 func (s *Store) ListBalancers() ([]*Balancer, error) {
-	rows, err := s.Db.Query("SELECT id, count(machine_id) AS total_machines FROM balancers JOIN connections c on balancers.id = c.balancer_id GROUP BY id;")
+	rows, err := s.Db.Query("SELECT id, count(machine_id) AS total_machines FROM balancers " +
+		"JOIN connections c on balancers.id = c.balancer_id GROUP BY id ORDER BY id;")
 	if err != nil {
 		return nil, err
 	}
