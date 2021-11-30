@@ -1,6 +1,8 @@
 const balancers = require('./balancers/client');
+const machines = require('./machines/client');
 
 const balancersClient = balancers.Client('http://localhost:8080');
+const machinesClient = machines.Client('http://localhost:8080');
 
 // Scenario 1: Display list of balancers.
 balancersClient.listBalancers()
@@ -11,4 +13,14 @@ balancersClient.listBalancers()
     })
     .catch((e) => {
         console.log(`Problem listing list of balancers: ${e.message}`);
+    });
+
+// Scenario 2: Update machine.
+machinesClient.updateMachine(5, false)
+    .then((resp) => {
+        console.log('=== Scenario 2 ===');
+        console.log('Update machine response:', resp);
+    })
+    .catch((e) => {
+        console.log(`Problem updating machine: ${e.message}`);
     });
