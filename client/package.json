@@ -1,0 +1,11 @@
+{
+  "name": "architecture-lab-3",
+  "version": "1.0.0",
+  "description": "Laboratory work 3 in the discipline of Software Architecture",
+  "main": "examples.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "InvictoProjects",
+  "license": "GPL-3.0"
+}
